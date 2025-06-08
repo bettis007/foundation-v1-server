@@ -15,7 +15,7 @@
 const config = {};
 config.enabled = true;
 config.name = 'Pool-Litecoin-Dogecoin';
-config.coins = ['Litecoin', 'Dogecoin'];
+config.coins = 'Litecoin', 'Dogecoin';
 
 // Banning Configuration
 config.banning = {};
@@ -28,14 +28,14 @@ config.banning.purgeInterval = 300;
 config.ports = [];
 
 const ports1 = {};
-ports1.port = [port];
+ports1.port = '3333';
 ports1.enabled = true;
-ports1.type = [type];
+ports1.type = 'solo';
 ports1.tls = false;
 ports1.difficulty = {};
-ports1.difficulty.initial = [initial];
-ports1.difficulty.minimum = [minimum];
-ports1.difficulty.maximum = [maximum];
+ports1.difficulty.initial = '50000';
+ports1.difficulty.minimum = '50000';
+ports1.difficulty.maximum = '50000';
 ports1.difficulty.targetTime = 15;
 ports1.difficulty.retargetTime = 90;
 ports1.difficulty.variance = 0.3;
@@ -43,8 +43,8 @@ config.ports.push(ports1);
 
 // P2P Configuration
 config.p2p = {};
-config.p2p.enabled = false;
-config.p2p.host = '[host]';
+config.p2p.enabled = true;
+config.p2p.host = '127.0.0.1';
 config.p2p.port = 9333;
 
 // Statistics Configuration
@@ -60,8 +60,8 @@ config.statistics.paymentsWindow = 604800; // s;
 // Settings Configuration
 config.settings = {};
 config.settings.blockRefreshInterval = 1000; // ms;
-config.settings.connectionTimeout = 600; // s;
-config.settings.jobRebroadcastTimeout = 60; // s;
+config.settings.connectionTimeout = 600000000; // s;
+config.settings.jobRebroadcastTimeout = 300; // s;
 config.settings.tcpProxyProtocol = false;
 
 // Primary Configuration
@@ -69,7 +69,7 @@ config.settings.tcpProxyProtocol = false;
 
 // Miscellaneous Configuration
 config.primary = {};
-config.primary.address = '[address]';
+config.primary.address = '127.0.0.1';
 
 // Coin Configuration
 config.primary.coin = {};
@@ -81,7 +81,7 @@ config.primary.coin.parameters = {};
 config.primary.coin.segwit = true;
 config.primary.coin.mweb = true;
 config.primary.coin.staking = false;
-config.primary.coin.rewards = '';
+config.primary.coin.rewards = '0';
 config.primary.coin.version = 1;
 
 // Algorithm Configuration
@@ -123,32 +123,32 @@ config.primary.coin.testnet.coin = 'ltc';
 config.primary.daemons = [];
 
 const daemons1 = {};
-daemons1.host = '[host]';
+daemons1.host = '127.0.0.1';
 daemons1.port = 9332;
-daemons1.username = '[username]';
-daemons1.password = '[password]';
+daemons1.username = 'litecoin';
+daemons1.password = 'kctwU11SFGYCBgJZc77Kc2DbyuBF5bvZ';
 config.primary.daemons.push(daemons1);
 
 // Payment Configuration
 config.primary.payments = {};
-config.primary.payments.enabled = true;
+config.primary.payments.enabled = false;
 config.primary.payments.checkInterval = 20; // s;
 config.primary.payments.paymentInterval = 7200; // s;
 config.primary.payments.minConfirmations = 10;
 config.primary.payments.minPayment = 0.005;
 config.primary.payments.transactionFee = 0.004;
 config.primary.payments.daemon = {};
-config.primary.payments.daemon.host = '[host]';
+config.primary.payments.daemon.host = '127.0.0.1';
 config.primary.payments.daemon.port = 9332;
-config.primary.payments.daemon.username = '[username]';
-config.primary.payments.daemon.password = '[password]';
+config.primary.payments.daemon.username = 'litecoin';
+config.primary.payments.daemon.password = 'kctwU11SFGYCBgJZc77Kc2DbyuBF5bvZ';
 
 // Recipients Configuration
 config.primary.recipients = [];
 
 const recipient1 = {};
-recipient1.address = '[address]';
-recipient1.percentage = [percentage] // 0 to 1;
+recipient1.address = '127.0.0.1';
+recipient1.percentage = '0' // 0 to 1;
 config.primary.recipients.push(recipient1);
 
 // Auxiliary Configuration
@@ -168,33 +168,33 @@ config.auxiliary.coin.header = 'fabe6d6d';
 config.auxiliary.daemons = [];
 
 const auxDaemons1 = {};
-auxDaemons1.host = '[host]';
+auxDaemons1.host = '127.0.0.1';
 auxDaemons1.port = 22555;
-auxDaemons1.username = '[username]';
-auxDaemons1.password = '[password]';
+auxDaemons1.username = 'doge';
+auxDaemons1.password = 'kctwU11SFGYCBgJZc77Kc2DbyuBF5bvZ';
 config.auxiliary.daemons.push(auxDaemons1);
 
 // Payment Configuration
 config.auxiliary.payments = {};
 config.auxiliary.payments.enabled = true;
 config.auxiliary.payments.checkInterval = 20;
-config.auxiliary.payments.paymentInterval = 7200;
+config.auxiliary.payments.paymentInterval = 3600;
 config.auxiliary.payments.minConfirmations = 10;
 config.auxiliary.payments.minPayment = 100;
 config.auxiliary.payments.transactionFee = 0.04;
 config.auxiliary.payments.daemon = {};
-config.auxiliary.payments.daemon.host = '[host]';
+config.auxiliary.payments.daemon.host = '127.0.0.1';
 config.auxiliary.payments.daemon.port = 22555;
-config.auxiliary.payments.daemon.username = '[username]';
-config.auxiliary.payments.daemon.password = '[password]';
+config.auxiliary.payments.daemon.username = 'doge';
+config.auxiliary.payments.daemon.password = 'kctwU11SFGYCBgJZc77Kc2DbyuBF5bvZ';
 
 // Recipients Configuration
 // Still a Work in Progress (2/10/2022)
 config.auxiliary.recipients = [];
 
 const auxRecipient1 = {};
-auxRecipient1.address = '[address]';
-auxRecipient1.percentage = [percentage] // 0 to 1;
+auxRecipient1.address = 'DQw9MhSDyXd6G6hTeFpHtMDocuRU89QkX2';
+auxRecipient1.percentage = '1' // 0 to 1;
 config.auxiliary.recipients.push(auxRecipient1);
 
 // Export Configuration
